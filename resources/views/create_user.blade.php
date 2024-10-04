@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create User</title>
-</head>
-<body>
-   <style>
+    <title>Halaman User</title>
+    <style>
         body {
             background-color: #ffe6f2;
             font-family: 'Arial', sans-serif;
@@ -16,7 +14,7 @@
         }
 
         h1 {
-            color: #ff69b4;
+            color: pink;
             font-size: 2.5em;
             margin-bottom: 20px;
         }
@@ -59,20 +57,79 @@
         input[type="submit"]:hover {
             background-color: #ff1493;
         }
+
+         .form-group {
+        margin: 10px 0;
+    }
+
+    .form-group label {
+        display: block;
+        color: pink;
+        margin-bottom: 5px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .form-group button {
+        padding: 10px 20px;
+        background-color: pink;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .form-group button:hover {
+        background-color: #d4e845;
+    }
     </style>
 </head>
-    
-    <h1>Ini Halaman Create User</h1>
 
-    <form action="{{ route('user.store') }}" method="post">
-        @csrf
-        <label for="nama">Nama:</label><br>
-        <input type="text" id="nama" name="nama"><br>
-        <label for="kelas">Kelas:</label><br>
-        <input type="text" id="kelas" name="kelas"><br><br>
-        <label for="npm">NPM:</label><br>
-        <input type="text" id="npm" name="npm"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+<body>
+    <div class="form">
+        <h1>Create User</h1>
+        <form action="{{ route('user.store') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" value="{{ old('nama') }}" class="@error('nama') input-invalid @enderror">
+            @error('nama')
+                <div class="pesan-error">{{ $message }}</div>
+            @enderror
+       
+            <div class="form-group">
+                <label for="npm">NPM:</label>
+                <input type="text" id="npm" name="npm" value="{{ old('npm') }}" class="@error('npm') input-invalid @enderror">
+            @error('npm')
+                <div class="pesan-error">{{ $message }}</div>
+            @enderror
+
+            <div class="form-group">
+                <label for="kelas">Kelas:</label>
+                <select name="kelas_id" id="kelas_id" class="@error('kelas_id') input-invalid @enderror">
+                <option value="">Pilih Kelas</option>
+                @foreach ($kelas as $kelasItem)
+                    <option value="{{ $kelasItem->id }}" {{ old('kelas_id') == $kelasItem->id ? 'selected' : '' }}>
+                        {{ $kelasItem->nama_kelas }}
+                    </option>
+                @endforeach
+            </select>
+            @error('kelas_id')
+                <div class="pesan-error">{{ $message }}</div>
+            @enderror
+
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
 </body>
 </html>
