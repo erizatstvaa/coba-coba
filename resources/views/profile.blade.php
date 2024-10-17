@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,6 @@
     height: 100vh;
     margin: 0;
 }
-
 .profile-container {
     background-color: white;
     border-radius: 10px;
@@ -24,24 +23,20 @@
     text-align: center;
     width: 300px;
 }
-
 .profile-picture {
     margin-bottom: 20px;
 }
-
 .profile-picture img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     border: 2px solid #ddd;
 }
-
 .profile-info {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .profile-item {
     background-color: pink;
     padding: 10px;
@@ -49,7 +44,6 @@
     width: 100%;
     border-radius: 5px;
 }
-
 .profile-item span {
     font-weight: bold;
 }
@@ -72,7 +66,7 @@
             <div class="profile-item">
                 <span></span> {{ $nama_kelas ?? 'Kelas tidak ditemukan'}}
             </div>
-           
+
         </div>
     </div>
 </body>

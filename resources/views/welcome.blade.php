@@ -38,8 +38,6 @@
                     </svg>
                 </div>
 
-                <br>
-
                 <div class="flex justify-center">
                     <h1>Eriza Tri Sativa - 2217051159</h1>
                 </div>
