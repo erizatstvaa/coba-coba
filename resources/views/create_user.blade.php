@@ -12,13 +12,11 @@
             text-align: center;
             padding: 20px;
         }
-
         h1 {
             color: pink;
             font-size: 2.5em;
             margin-bottom: 20px;
         }
-
         form {
             background-color: #fff0f5;
             border: 2px solid #ffb6c1;
@@ -27,13 +25,11 @@
             padding: 30px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-
         label {
             font-weight: bold;
             font-size: 1.1em;
             color: #ff69b4;
         }
-
         input[type="text"] {
             width: 80%;
             padding: 10px;
@@ -42,7 +38,6 @@
             border-radius: 5px;
             box-sizing: border-box;
         }
-
         input[type="submit"] {
             background-color: #ff69b4;
             color: white;
@@ -53,21 +48,17 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
         input[type="submit"]:hover {
             background-color: #ff1493;
         }
-
          .form-group {
         margin: 10px 0;
     }
-
     .form-group label {
         display: block;
         color: pink;
         margin-bottom: 5px;
     }
-
     .form-group input {
         width: 100%;
         padding: 8px;
@@ -75,7 +66,6 @@
         border-radius: 5px;
         border: 1px solid #ccc;
     }
-
     .form-group button {
         padding: 10px 20px;
         background-color: pink;
@@ -85,14 +75,15 @@
         font-weight: bold;
         color: #333;
     }
-
     .form-group button:hover {
         background-color: #d4e845;
     }
     </style>
-</head>
 
-<body>
+@extends('layouts.app')
+
+@section('content')
+
     <div class="form">
         <h1>Create User</h1>
         <form action="{{ route('user.store') }}" method="POST">
@@ -103,7 +94,7 @@
             @error('nama')
                 <div class="pesan-error">{{ $message }}</div>
             @enderror
-       
+
             <div class="form-group">
                 <label for="npm">NPM:</label>
                 <input type="text" id="npm" name="npm" value="{{ old('npm') }}" class="@error('npm') input-invalid @enderror">
@@ -131,5 +122,5 @@
         </form>
     </div>
 
-</body>
-</html>
+
+@endsection
