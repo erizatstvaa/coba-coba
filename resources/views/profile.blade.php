@@ -16,7 +16,6 @@
             background-color: #f4f4f4;
             position: relative;
         }
-
         .btn-back {
             position: absolute;
             top: 20px;
@@ -34,7 +33,6 @@
         .btn-back:hover {
             background-color: #ff8080;
         }
-
         .profile-image img {
             border-radius: 50%;
             width: 150px;
@@ -42,7 +40,6 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
             transition: box-shadow 0.3s ease;
         }
-
         .profile-image img:hover {
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
@@ -55,7 +52,6 @@
             text-align: center;
             width: 500px;
         }
-
         .profile-picture {
             margin-bottom: 20px;
         }
@@ -65,7 +61,6 @@
             border-radius: 50%;
             border: 2px solid #ddd;
         }
-
         .profile-item {
             background-color: pink;
             padding: 10px;

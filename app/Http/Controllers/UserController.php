@@ -21,7 +21,7 @@ class UserController extends Controller
     public function create()
     {
         $kelas = $this->kelasModel->getKelas(); 
-    
+
         return view('create_user', [
             'title' => 'Create User',
             'kelas' => $kelas,
@@ -31,7 +31,7 @@ class UserController extends Controller
     public function index() 
     { 
         $users = UserModel::with('kelas')->get(); 
-    
+
         return view('list_user', [
             'title' => 'List User',
             'users' => $users,

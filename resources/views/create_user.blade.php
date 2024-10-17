@@ -52,7 +52,6 @@
         input[type="submit"]:hover {
             background-color: #ff1493;
         }
-
         .btn-add{
             display: inline-block;
             padding: 12px 20px;
